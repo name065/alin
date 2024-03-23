@@ -394,7 +394,7 @@ document.write(`
 <h1>Matriks<a class="headerlink" href="#matriks" title="Link to this heading">#</a></h1>
 <p>Matriks adalah susunan atau tata letak angka-angka dalam bentuk persegi panjang.Setiap angka dalam matriks disebut elemen matriks, elemen matriks biasanya memiliki baris dan kolom contoh matriks :
 \begin{split}
-A = \left[ \begin{array}\ 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
+A = \left[ \begin{array}{rrrr} 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
 \end{split}</p>
 <hr class="docutils" />
 <section id="ajabar-matriks">
@@ -406,16 +406,16 @@ A = \left[ \begin{array}\ 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
 <p>Penjumlahan matriks adalah operasi antara dua matriks yang memiliki dimensi yang sama, yaitu jumlah baris dan kolomnya harus sama.
 Contoh:
 \begin{split}
-A = \left[ \begin{array}\ 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
-B = \left[ \begin{array}\ 5 &amp; 6 \ 7 &amp; 8  \ \end{array}\right]
+A = \left[ \begin{array}{rrrr} 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
+B = \left[ \begin{array}{rrrr} 5 &amp; 6 \ 7 &amp; 8  \ \end{array}\right]
 \end{split}</p>
 <p>Untuk menjumlahkan matriks 𝑨 dan 𝐵, kita cukup menambahkan setiap elemen yang berada pada posisi yang sama. Jadi, hasil penjumlahan matriks adalah:</p>
 <p>\begin{split}
-A + B = \left[ \begin{array}\ 1+5 &amp; 2+6 \ 3+7 &amp; 4+8 \ \end{array}\right]
+A + B = \left[ \begin{array}{rrrr} 1+5 &amp; 2+6 \ 3+7 &amp; 4+8 \ \end{array}\right]
 \end{split}</p>
 <hr class="docutils" />
 <p>\begin{split}
-Hasil = \left[ \begin{array}\ 6 &amp; 8 \ 10 &amp; 12  \ \end{array}\right]
+Hasil = \left[ \begin{array}{rrrr} 6 &amp; 8 \ 10 &amp; 12  \ \end{array}\right]
 \end{split}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -453,16 +453,16 @@ hasil
 <h2>Operasi Pengurangan Matriks<a class="headerlink" href="#operasi-pengurangan-matriks" title="Link to this heading">#</a></h2>
 <p>Operasi pengurangan matriks adakah antara dua matriks yang memiliki dimensi yang sama, yaitu jumlah baris dan kolomnya identik. Operasi ini dilakukan dengan mengurangkan setiap elemen yang sesuai dari matriks pertama dengan matriks kedua. contoh:</p>
 <p>\begin{split}
-A = \left[ \begin{array}\ 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
-B = \left[ \begin{array}\ 5 &amp; 6 \ 7 &amp; 8  \ \end{array}\right]
+A = \left[ \begin{array}{rrrr} 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
+B = \left[ \begin{array}{rrrr} 5 &amp; 6 \ 7 &amp; 8  \ \end{array}\right]
 \end{split}</p>
 <p>Untuk mengurangkan matriks 𝑨 dari 𝐵, kita cukup mengurangkan setiap elemen yang berada pada posisi yang sama. Jadi, hasil pengurangan matriks adalah:</p>
 <p>\begin{split}
-A - B = \left[ \begin{array}\ 1-5 &amp; 2-6 \ 3-7 &amp; 4-8 \ \end{array}\right]
+A - B = \left[ \begin{array}{rrrr} 1-5 &amp; 2-6 \ 3-7 &amp; 4-8 \ \end{array}\right]
 \end{split}</p>
 <hr class="docutils" />
 <p>\begin{split}
-Hasil = \left[ \begin{array}\ -4 &amp; -4 \ -4 &amp; -4  \ \end{array}\right]
+Hasil = \left[ \begin{array}{rrrr} -4 &amp; -4 \ -4 &amp; -4  \ \end{array}\right]
 \end{split}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -500,17 +500,17 @@ hasil :
 <h2>Operasi Perkalian Matriks<a class="headerlink" href="#operasi-perkalian-matriks" title="Link to this heading">#</a></h2>
 <p>Operasi perkalian matriks adalah operasi antara dua matriks yang memiliki dimensi yang memenuhi aturan perkalian matriks. Aturan ini menyatakan bahwa jumlah kolom dari matriks pertama harus sama dengan jumlah baris dari matriks kedua. Contoh :</p>
 <p>\begin{split}
-A = \left[ \begin{array}\ 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
-B = \left[ \begin{array}\ 5 &amp; 6 \ 7 &amp; 8  \ \end{array}\right]
+A = \left[ \begin{array}{rrrr} 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
+B = \left[ \begin{array}{rrrr} 5 &amp; 6 \ 7 &amp; 8  \ \end{array}\right]
 \end{split}</p>
 <p>Untuk melakukan perkalian matriks 𝑨 dengan 𝐵, kita mengalikan setiap baris dari matriks 𝑨 dengan setiap kolom dari matriks 𝐵 dan menjumlahkan hasilnya.
 Maka, hasil perkalian matriks 𝑨 dengan 𝐵 adalah:</p>
 <p>\begin{split}
-A × B = \left[ \begin{array}\ (1 \times 5 + 2 \times 7) &amp; (1 \times 6 + 2 \times 8) \ (3 \times 5 + 4 \times 7) &amp; (3 \times 6 + 4 \times 8) \ \end{array}\right]
+A × B = \left[ \begin{array}{rrrr} (1 \times 5 + 2 \times 7) &amp; (1 \times 6 + 2 \times 8) \ (3 \times 5 + 4 \times 7) &amp; (3 \times 6 + 4 \times 8) \ \end{array}\right]
 \end{split}</p>
 <hr class="docutils" />
 <p>\begin{split}
-Hasil = \left[ \begin{array}\ 19 &amp; 22 \ 43 &amp; 50   \ \end{array}\right]
+Hasil = \left[ \begin{array}{rrrr} 19 &amp; 22 \ 43 &amp; 50   \ \end{array}\right]
 \end{split}</p>
 <p><strong>Note : bahwa perkalian matriks tidak bersifat komutatif, artinya 𝑨 tidak selalu sama dengan 𝐵𝑨, kecuali jika kedua matriks tersebut merupakan matriks persegi dan memenuhi sifat-sifat tertentu.</strong></p>
 <div class="cell docutils container">
@@ -552,11 +552,11 @@ hasil :
 <h2>Tranpose Matriks<a class="headerlink" href="#tranpose-matriks" title="Link to this heading">#</a></h2>
 <p>Transpose matriks adalah operasi yang menghasilkan matriks baru dengan menukar posisi baris dan kolom dari matriks asal. Dalam operasi ini, elemen-elemen yang terletak pada baris dipindahkan ke kolom, dan elemen-elemen yang ada di kolom dipindahkan baris. Contoh :</p>
 <p>\begin{split}
-A = \left[ \begin{array}\ 1 &amp; 2 &amp; 3 \ 4 &amp; 5 &amp; 6 \ \end{array}\right]
+A = \left[ \begin{array}{rrrr} 1 &amp; 2 &amp; 3 \ 4 &amp; 5 &amp; 6 \ \end{array}\right]
 \end{split}</p>
 <p>Maka, transpose dari matriks 𝐴 adalah:</p>
 <p>\begin{split}
-Aᵀ = \left[ \begin{array}\ 1 &amp; 4 \ 2 &amp; 5 \ 3 &amp; 6  \ \end{array}\right]
+Aᵀ = \left[ \begin{array} {rrrr}1 &amp; 4 \ 2 &amp; 5 \ 3 &amp; 6  \ \end{array}\right]
 \end{split}</p>
 <p>Jadi, matriks Aᵀ adalah hasil dari melakukan transpose terhadap matriks 𝐴, yaitu dengan menukar posisi baris dan kolomnya.</p>
 <div class="cell docutils container">
