@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'aljabarmatriks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -404,19 +406,28 @@ A = \left[ \begin{array}{rrrr} 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
 <section id="operasi-penjumlahan-matriks">
 <h2>Operasi Penjumlahan Matriks<a class="headerlink" href="#operasi-penjumlahan-matriks" title="Link to this heading">#</a></h2>
 <p>Penjumlahan matriks adalah operasi antara dua matriks yang memiliki dimensi yang sama, yaitu jumlah baris dan kolomnya harus sama.
-Contoh:
+Contoh:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{split}
-A = \left[ \begin{array}{rrrr} 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
-B = \left[ \begin{array}{rrrr} 5 &amp; 6 \ 7 &amp; 8  \ \end{array}\right]
-\end{split}</p>
+A = \left[ \begin{array}{rrrr} 1 &amp; 2 \\ 3 &amp; 4  \\ \end{array}\right]
+B = \left[ \begin{array}{rrrr} 5 &amp; 6 \\ 7 &amp; 8  \\ \end{array}\right]
+\end{split}
+\end{split}\]</div>
 <p>Untuk menjumlahkan matriks 𝑨 dan 𝐵, kita cukup menambahkan setiap elemen yang berada pada posisi yang sama. Jadi, hasil penjumlahan matriks adalah:</p>
-<p>\begin{split}
-A + B = \left[ \begin{array}{rrrr} 1+5 &amp; 2+6 \ 3+7 &amp; 4+8 \ \end{array}\right]
-\end{split}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+A + B = \left[ \begin{array}{rrrr} 1+5 &amp; 2+6 \\ 3+7 &amp; 4+8 \\ \end{array}\right]
+\end{split}
+\end{split}\]</div>
 <hr class="docutils" />
-<p>\begin{split}
-Hasil = \left[ \begin{array}{rrrr} 6 &amp; 8 \ 10 &amp; 12  \ \end{array}\right]
-\end{split}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+Hasil = \left[ \begin{array}{rrrr} 6 &amp; 8 \\ 10 &amp; 12  \\ \end{array}\right]
+\end{split}
+\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code Penjumlahan Matriks</span>
@@ -452,18 +463,27 @@ hasil
 <section id="operasi-pengurangan-matriks">
 <h2>Operasi Pengurangan Matriks<a class="headerlink" href="#operasi-pengurangan-matriks" title="Link to this heading">#</a></h2>
 <p>Operasi pengurangan matriks adakah antara dua matriks yang memiliki dimensi yang sama, yaitu jumlah baris dan kolomnya identik. Operasi ini dilakukan dengan mengurangkan setiap elemen yang sesuai dari matriks pertama dengan matriks kedua. contoh:</p>
-<p>\begin{split}
-A = \left[ \begin{array}{rrrr} 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
-B = \left[ \begin{array}{rrrr} 5 &amp; 6 \ 7 &amp; 8  \ \end{array}\right]
-\end{split}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+A = \left[ \begin{array}{rrrr} 1 &amp; 2 \\ 3 &amp; 4  \\ \end{array}\right]
+B = \left[ \begin{array}{rrrr} 5 &amp; 6 \\ 7 &amp; 8  \\ \end{array}\right]
+\end{split}
+\end{split}\]</div>
 <p>Untuk mengurangkan matriks 𝑨 dari 𝐵, kita cukup mengurangkan setiap elemen yang berada pada posisi yang sama. Jadi, hasil pengurangan matriks adalah:</p>
-<p>\begin{split}
-A - B = \left[ \begin{array}{rrrr} 1-5 &amp; 2-6 \ 3-7 &amp; 4-8 \ \end{array}\right]
-\end{split}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+A - B = \left[ \begin{array}{rrrr} 1-5 &amp; 2-6 \\ 3-7 &amp; 4-8 \\ \end{array}\right]
+\end{split}
+\end{split}\]</div>
 <hr class="docutils" />
-<p>\begin{split}
-Hasil = \left[ \begin{array}{rrrr} -4 &amp; -4 \ -4 &amp; -4  \ \end{array}\right]
-\end{split}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+Hasil = \left[ \begin{array}{rrrr} -4 &amp; -4 \\ -4 &amp; -4  \\ \end{array}\right]
+\end{split}
+\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code Penjumlahan Matriks</span>
@@ -499,19 +519,28 @@ hasil :
 <section id="operasi-perkalian-matriks">
 <h2>Operasi Perkalian Matriks<a class="headerlink" href="#operasi-perkalian-matriks" title="Link to this heading">#</a></h2>
 <p>Operasi perkalian matriks adalah operasi antara dua matriks yang memiliki dimensi yang memenuhi aturan perkalian matriks. Aturan ini menyatakan bahwa jumlah kolom dari matriks pertama harus sama dengan jumlah baris dari matriks kedua. Contoh :</p>
-<p>\begin{split}
-A = \left[ \begin{array}{rrrr} 1 &amp; 2 \ 3 &amp; 4  \ \end{array}\right]
-B = \left[ \begin{array}{rrrr} 5 &amp; 6 \ 7 &amp; 8  \ \end{array}\right]
-\end{split}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+A = \left[ \begin{array}{rrrr} 1 &amp; 2 \\ 3 &amp; 4  \\ \end{array}\right]
+B = \left[ \begin{array}{rrrr} 5 &amp; 6 \\ 7 &amp; 8  \\ \end{array}\right]
+\end{split}
+\end{split}\]</div>
 <p>Untuk melakukan perkalian matriks 𝑨 dengan 𝐵, kita mengalikan setiap baris dari matriks 𝑨 dengan setiap kolom dari matriks 𝐵 dan menjumlahkan hasilnya.
 Maka, hasil perkalian matriks 𝑨 dengan 𝐵 adalah:</p>
-<p>\begin{split}
-A × B = \left[ \begin{array}{rrrr} (1 \times 5 + 2 \times 7) &amp; (1 \times 6 + 2 \times 8) \ (3 \times 5 + 4 \times 7) &amp; (3 \times 6 + 4 \times 8) \ \end{array}\right]
-\end{split}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+A × B = \left[ \begin{array}{rrrr} (1 \times 5 + 2 \times 7) &amp; (1 \times 6 + 2 \times 8) \\ (3 \times 5 + 4 \times 7) &amp; (3 \times 6 + 4 \times 8) \\ \end{array}\right]
+\end{split}
+\end{split}\]</div>
 <hr class="docutils" />
-<p>\begin{split}
-Hasil = \left[ \begin{array}{rrrr} 19 &amp; 22 \ 43 &amp; 50   \ \end{array}\right]
-\end{split}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+Hasil = \left[ \begin{array}{rrrr} 19 &amp; 22 \\ 43 &amp; 50   \\ \end{array}\right]
+\end{split}
+\end{split}\]</div>
 <p><strong>Note : bahwa perkalian matriks tidak bersifat komutatif, artinya 𝑨 tidak selalu sama dengan 𝐵𝑨, kecuali jika kedua matriks tersebut merupakan matriks persegi dan memenuhi sifat-sifat tertentu.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -551,13 +580,19 @@ hasil :
 <section id="tranpose-matriks">
 <h2>Tranpose Matriks<a class="headerlink" href="#tranpose-matriks" title="Link to this heading">#</a></h2>
 <p>Transpose matriks adalah operasi yang menghasilkan matriks baru dengan menukar posisi baris dan kolom dari matriks asal. Dalam operasi ini, elemen-elemen yang terletak pada baris dipindahkan ke kolom, dan elemen-elemen yang ada di kolom dipindahkan baris. Contoh :</p>
-<p>\begin{split}
-A = \left[ \begin{array}{rrrr} 1 &amp; 2 &amp; 3 \ 4 &amp; 5 &amp; 6 \ \end{array}\right]
-\end{split}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+A = \left[ \begin{array}{rrrr} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ \end{array}\right]
+\end{split}
+\end{split}\]</div>
 <p>Maka, transpose dari matriks 𝐴 adalah:</p>
-<p>\begin{split}
-Aᵀ = \left[ \begin{array} {rrrr}1 &amp; 4 \ 2 &amp; 5 \ 3 &amp; 6  \ \end{array}\right]
-\end{split}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}
+Aᵀ = \left[ \begin{array} {rrrr}1 &amp; 4 \\ 2 &amp; 5 \\ 3 &amp; 6  \\ \end{array}\right]
+\end{split}
+\end{split}\]</div>
 <p>Jadi, matriks Aᵀ adalah hasil dari melakukan transpose terhadap matriks 𝐴, yaitu dengan menukar posisi baris dan kolomnya.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
