@@ -42,7 +42,7 @@
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
@@ -62,6 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Determinan" href="Determinann.html" />
     <link rel="prev" title="Matriks" href="aljabarmatriks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,14 +174,15 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Selamat Datang Di Kost Saraa
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sistemlinier.html">Penyelesain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aljabarmatriks.html">Matriks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Matrix Invers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Determinann.html">Determinan</a></li>
 </ul>
 
     </div>
@@ -1418,23 +1420,17 @@ x_1+x_2+x_3+x_4+x_5+x_6&amp;=11\\
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">j</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="o">.</span><span class="n">round</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.          0.          0.          0.          0.          0.
-   0.83333333  0.16666667 -0.66666667 -2.16666667  1.         -0.16666667]
- [-1.          1.          0.          0.          0.          0.
-  -1.25       -0.25        1.          3.25       -1.         -0.25      ]
- [ 0.          0.          1.          0.          0.          0.
-  -1.66666667 -0.33333333  0.33333333  4.33333333 -1.          0.33333333]
- [ 0.          0.          0.          1.          0.          0.
-   1.75       -0.25        0.         -3.75        1.         -0.25      ]
- [ 0.          0.          0.          0.          1.          0.
-   0.25        0.25        0.         -1.25        0.          0.25      ]
- [-0.         -0.         -0.         -0.         -0.          1.
-  -0.75        0.25       -0.          2.75       -1.          0.25      ]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.  0.  0.  0.  0.  0.  1.  0. -1. -2.  1. -0.]
+ [-1.  1.  0.  0.  0.  0. -1. -0.  1.  3. -1. -0.]
+ [ 0.  0.  1.  0.  0.  0. -2. -0.  0.  4. -1.  0.]
+ [ 0.  0.  0.  1.  0.  0.  2. -0.  0. -4.  1. -0.]
+ [ 0.  0.  0.  0.  1.  0.  0.  0.  0. -1.  0.  0.]
+ [-0. -0. -0. -0. -0.  1. -1.  0. -0.  3. -1.  0.]]
 </pre></div>
 </div>
 </div>
@@ -1442,23 +1438,20 @@ x_1+x_2+x_3+x_4+x_5+x_6&amp;=11\\
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">RowAdd</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">round</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.          0.          0.          0.          0.          0.
-   0.83333333  0.16666667 -0.66666667 -2.16666667  1.         -0.16666667]
- [ 0.          1.          0.          0.          0.          0.
-  -0.41666667 -0.08333333  0.33333333  1.08333333  0.         -0.41666667]
- [ 0.          0.          1.          0.          0.          0.
-  -1.66666667 -0.33333333  0.33333333  4.33333333 -1.          0.33333333]
- [ 0.          0.          0.          1.          0.          0.
-   1.75       -0.25        0.         -3.75        1.         -0.25      ]
- [ 0.          0.          0.          0.          1.          0.
-   0.25        0.25        0.         -1.25        0.          0.25      ]
- [-0.         -0.         -0.         -0.         -0.          1.
-  -0.75        0.25       -0.          2.75       -1.          0.25      ]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.  0.  0.  0.  0.  0.  1.  0. -1. -2.  1. -0.]
+ [ 0.  1.  0.  0.  0.  0. -0. -0.  0.  1.  0. -0.]
+ [ 0.  0.  1.  0.  0.  0. -2. -0.  0.  4. -1.  0.]
+ [ 0.  0.  0.  1.  0.  0.  2. -0.  0. -4.  1. -0.]
+ [ 0.  0.  0.  0.  1.  0.  0.  0.  0. -1.  0.  0.]
+ [-0. -0. -0. -0. -0.  1. -1.  0. -0.  3. -1.  0.]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1468,7 +1461,8 @@ x_1+x_2+x_3+x_4+x_5+x_6&amp;=11\\
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hasil</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.83333333</span><span class="p">,</span><span class="mf">0.16666667</span><span class="p">,</span><span class="o">-</span><span class="mf">0.66666667</span><span class="p">,</span><span class="o">-</span><span class="mf">2.16666667</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.16666667</span><span class="p">],[</span><span class="o">-</span><span class="mf">0.41666667</span><span class="p">,</span><span class="o">-</span><span class="mf">0.08333333</span><span class="p">,</span><span class="mf">0.33333333</span><span class="p">,</span><span class="mf">1.08333333</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.41666667</span><span class="p">],[</span><span class="o">-</span><span class="mf">1.66666667</span><span class="p">,</span><span class="o">-</span><span class="mf">0.33333333</span><span class="p">,</span><span class="mf">0.33333333</span><span class="p">,</span><span class="mf">4.33333333</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.33333333</span><span class="p">],[</span><span class="mf">1.75</span><span class="p">,</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">3.75</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.25</span><span class="p">],[</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.25</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.25</span><span class="p">],[</span> <span class="o">-</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.75</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.25</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
 <span class="n">kons</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">14</span><span class="p">],[</span><span class="mi">23</span><span class="p">],[</span><span class="mi">21</span><span class="p">],[</span><span class="mi">11</span><span class="p">],[</span><span class="mi">29</span><span class="p">],[</span><span class="mi">22</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pembuktian </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">hasil</span><span class="nd">@kons</span><span class="p">)</span>
+<span class="n">b_inver</span> <span class="o">=</span> <span class="n">hasil</span><span class="nd">@kons</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pembuktian </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">b_inver</span><span class="o">.</span><span class="n">round</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -1480,12 +1474,34 @@ x_1+x_2+x_3+x_4+x_5+x_6&amp;=11\\
  [ 0.25        0.25        0.         -1.25        0.          0.25      ]
  [-0.75        0.25        0.          2.75       -1.          0.25      ]]
 Pembuktian 
- [[2.99999985]
- [1.99999985]
- [1.99999985]
- [1.        ]
- [1.        ]
- [2.        ]]
+ [[3.]
+ [2.]
+ [2.]
+ [1.]
+ [1.]
+ [2.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hasil</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.83333333</span><span class="p">,</span><span class="mf">0.16666667</span><span class="p">,</span><span class="o">-</span><span class="mf">0.66666667</span><span class="p">,</span><span class="o">-</span><span class="mf">2.16666667</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.16666667</span><span class="p">],[</span><span class="o">-</span><span class="mf">0.41666667</span><span class="p">,</span><span class="o">-</span><span class="mf">0.08333333</span><span class="p">,</span><span class="mf">0.33333333</span><span class="p">,</span><span class="mf">1.08333333</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">0.41666667</span><span class="p">],[</span><span class="o">-</span><span class="mf">1.66666667</span><span class="p">,</span><span class="o">-</span><span class="mf">0.33333333</span><span class="p">,</span><span class="mf">0.33333333</span><span class="p">,</span><span class="mf">4.33333333</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.33333333</span><span class="p">],[</span><span class="mf">1.75</span><span class="p">,</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">3.75</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">0.25</span><span class="p">],[</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.25</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.25</span><span class="p">],[</span> <span class="o">-</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mf">2.75</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.25</span><span class="p">]])</span>
+<span class="n">soal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">hasil_akhirr</span> <span class="o">=</span> <span class="n">hasil</span><span class="nd">@soal</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil_akhirr</span><span class="o">.</span><span class="n">round</span><span class="p">(</span>
+
+<span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1. -0. -0. -0. -0. -0.  1.  0. -1. -2.  1. -0.]
+ [-0.  1. -0. -0. -0. -0. -0. -0.  0.  1.  0. -0.]
+ [-0. -0.  1. -0. -0. -0. -2. -0.  0.  4. -1.  0.]
+ [ 0.  0.  0.  1.  0.  0.  2. -0.  0. -4.  1. -0.]
+ [ 0.  0.  0.  0.  1.  0.  0.  0.  0. -1.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1. -1.  0.  0.  3. -1.  0.]]
 </pre></div>
 </div>
 </div>
@@ -1532,6 +1548,15 @@ Pembuktian
         <p class="prev-next-title">Matriks</p>
       </div>
     </a>
+    <a class="right-next"
+       href="Determinann.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Determinan</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1566,7 +1591,7 @@ Pembuktian
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Yudha Cakk
 </p>
 
   </div>
