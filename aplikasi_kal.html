@@ -62,6 +62,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'aplikasi_kal';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Transformation linier" href="Transsformasi.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,13 +178,17 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="sistemlinier.html">Penyelesain</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aljabarmatriks.html">Matriks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tugas3.html">Matrix Invers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Determinann.html">Determinan</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Transsformasi.html">Transformation linier</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pagerank</a></li>
+
+
+
 </ul>
 
     </div>
@@ -382,9 +385,16 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pagerank</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep">Konsep</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algorirma">Algorirma</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi">Implementasi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#page-rank">Page Rank</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-page-rank">Algoritma Page Rank</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep">Konsep</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komputasi-untuk-menghitung-pagerank">komputasi untuk menghitung pagerank</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi">Implementasi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penerapan-untuk-mencari-pagerank-dalam-code">Contoh Penerapan untuk Mencari Pagerank dalam Code</a></li>
 </ul>
 
             </nav>
@@ -404,35 +414,45 @@ document.write(`
 <p>PageRank bekerja dengan menghitung jumlah dan kualitas tautan ke suatu halaman untuk menentukan perkiraan kasar seberapa penting situs web tersebut. Asumsi yang mendasarinya adalah bahwa situs web yang lebih penting cenderung menerima lebih banyak tautan dari situs web lainnya.</p>
 <p>Saat ini, PageRank bukan satu-satunya algoritma pencarian yang digunakan oleh Google untuk mengurutkan hasil penelusuran, tetapi merupakan algoritma pertama yang digunakan oleh perusahaan itu, dan merupakan algoritma yang paling terkenal.Mulai 24 September 2019, PageRank dan semua paten terkaitnya sudah kedaluwarsa, sehingga tak dipakai lagi</p>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="page-rank">
+<h1>Page Rank<a class="headerlink" href="#page-rank" title="Link to this heading">#</a></h1>
+<p>PageRank adalah algoritma yang dibuat oleh Larry Page. Algoritma ini digunakan oleh mesin pencarian Google yang memberikan bobot numerik untuk setiap elemen dari kumpulan dokumen hyperlink seperti Word Wide Web dengan tujuan untuk mengukur hubungan kepentingan dalam kumpulan dokumen tersebut. Dalam algoritma PageRank dihasilkan matriks yang menghitung probabilitas bahwa pengguna akan berpindah dari satu halaman ke halaman lainnya.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="algoritma-page-rank">
+<h1>Algoritma Page Rank<a class="headerlink" href="#algoritma-page-rank" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Analisis Tautan: Algoritma memulai dengan menganalisis struktur tautan di web. Ia melihat semua tautan dari satu halaman ke halaman lain di internet.</p></li>
+<li><p>Nilai Awal: Setiap halaman web awalnya diberi nilai peringkat yang sama.</p></li>
+<li><p>Perhitungan Iteratif:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Untuk setiap halaman 𝑃, PageRank mendistribusikan nilai peringkat dari
+𝑃 ke semua halaman yang ditautkan olehnya.</p></li>
+<li><p>Jumlah nilai peringkat yang diberikan dari 𝑃 ke sebuah halaman yang ditautkannya sebanding dengan jumlah tautan keluar dari 𝑃.</p></li>
+<li><p>Proses ini diulang secara iteratif hingga nilai peringkat stabil.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Faktor Redaman: Untuk memperhitungkan kemungkinan bahwa pengguna mungkin melompat secara acak ke halaman lain alih-alih mengikuti tautan diperkenalkan faktor redaman 𝑑 Faktor ini biasanya diatur sekitar 0,85. Rumus PageRank adalah:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+PR(P_i) = \frac{1 - d}{N} + d \sum_{P_j \in M(P_i)} \frac{PR(P_j)}{L(P_j)}
+\end{equation}
+\]</div>
 <section id="konsep">
-<h1>Konsep<a class="headerlink" href="#konsep" title="Link to this heading">#</a></h1>
+<h2>Konsep<a class="headerlink" href="#konsep" title="Link to this heading">#</a></h2>
 <p>Banyak cara digunakan search engine dalam menentukan kualitas/rangking sebuah halaman web, mulai dari penggunaan META Tags, isi dokumen, penekanan pada content dan masih banyak teknik lain atau gabungan teknik yang mungkin digunakan. Link popularity, sebuah teknologi yang dikembangkan untuk memperbaiki kekurangan dari teknologi lain (Meta Keywords, Meta Description) yang bisa dicurangi dengan halaman yang khusus di desain untuk search engine atau biasa disebut doorway pages. Dengan algoritma ‘PageRank’ ini, dalam setiap halaman akan diperhitungkan inbound link (link masuk) dan outbound link (link keuar) dari setiap halaman web.</p>
 <p>PageRank, memiliki konsep dasar yang sama dengan link popularity, tetapi tidak hanya memperhitungkan “jumlah” inbound dan outbound link. Pendekatan yang digunakan adalah sebuah halaman akan diangap penting jika halaman lain memiliki link ke halaman tersebut. Sebuah halaman juga akan menjadi semakin penting jika halaman lain yang memiliki rangking (pagerank) tinggi mengacu ke halaman tersebut.</p>
 <p>Dengan pendekatan yang digunakan PageRank, proses terjadi secara rekursif dimana sebuah rangking akan ditentukan oleh rangking dari halaman web yang rangkingnya ditentukan oleh rangking halaman web lain yang memiliki link ke halaman tersebut. Proses ini berarti suatu proses yang berulang (rekursif). Di dunia maya, ada jutaan bahkan milyaran halaman web. Oleh karena itu sebuah rangking halaman web ditentukan dari struktur link dari keseluruhan halaman web yang ada di dunia maya. Sebuah proses yang sangat besar dan komplek.</p>
+<section id="komputasi-untuk-menghitung-pagerank">
+<h3>komputasi untuk menghitung pagerank<a class="headerlink" href="#komputasi-untuk-menghitung-pagerank" title="Link to this heading">#</a></h3>
+<p>(gunakan error untuk menghentikan literasi
+menggunakan root sum square error)</p>
 </section>
-<section id="algorirma">
-<h1>Algorirma<a class="headerlink" href="#algorirma" title="Link to this heading">#</a></h1>
-<p>Dari pendekatan yang sudah dijelaskan pada artikel konsep pagerank, Lawrence Page and Sergey Brin membuat algoritma pagerank seperti di bawah:</p>
-<p>Algoritma awal
-$<span class="math notranslate nohighlight">\(
-\text{PR}(A) = (1-d) + d \left( \frac{\text{PR}(T_1)}{C(T_1)} + \cdots + \frac{\text{PR}(T_n)}{C(T_n)} \right)
-\)</span>$</p>
-<p>Salah satu algoritma lain yang dipublikasikan</p>
-<div class="math notranslate nohighlight">
-\[
-PR(A) = \frac{(1-d)}{N} + d \left( \frac{PR(T1)}{C(T1)} + \ldots + \frac{PR(Tn)}{C(Tn)} \right)
-\]</div>
-<p>PR(A) adalah Pagerank halaman A</p>
-<p>PR(T1) adalah Pagerank halaman T1 yang mengacu ke halaman A</p>
-<p>C(T1) adalah jumlah link keluar (outbound link) pada halaman T1</p>
-<p>d adalah damping factor yang bisa diberi antara 0 dan 1.</p>
-<p>N adalah jumlah keseluruhan halaman web (yang terindeks oleh Google)</p>
-<p>Dari algoritma di atas dapat dilihat bahwa pagerank ditentukan untuk setiap halaman anda bukan keseluruhan situs web. Pagerank sebuah halaman ditentukan dari pagerank halaman yang mengacu kepadanya yang juga menjalani proses penentuan pagerank dengan cara yang sama, jadi proses ini akan berulang sampai ditemukan hasil yang tepat.</p>
-<p>Akan tetapi pagerank halaman A tidak langsung diberikan kepada halaman yang dituju, akan tetapi sebelumnya dibagi dengan jumlah link yang ada pada halaman T1 (outbound link), dan pagerank itu akan dibagi rata kepada setiap link yang ada pada halaman tersebut. Demikian juga dengan setiap halaman lain “Tn” yang mengacu ke halaman “A”.</p>
-<p>Setelah semua pagerank yang didapat dari halaman-halaman lain yang mengacu ke halaman “A” dijumlahkan, nilai itu kemudian dikalikan dengan damping factor yang bernilai antara 0 sampai 1. Hal ini dilakukan agar tidak keseluruhan nilai pagerank halaman T didistribusikan ke halaman A.</p>
 </section>
 <section id="implementasi">
-<h1>Implementasi<a class="headerlink" href="#implementasi" title="Link to this heading">#</a></h1>
+<h2>Implementasi<a class="headerlink" href="#implementasi" title="Link to this heading">#</a></h2>
 <p>dari algoritma tersebut dapat di dapat matrik yang di hasilkan dari banyaknya edge atau link yang menghubungkan page satu dengan page lainnya.</p>
 <p>yaitu matriks A yang menyatakan hubungan page 1 2 3 dan 4:</p>
 <div class="math notranslate nohighlight">
@@ -450,55 +470,110 @@ A = \begin{bmatrix}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="c1"># matriks A yang di dapatkan dari hubungan ke empat Page</span>
-              <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="k">def</span> <span class="nf">pagerank</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">row_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">row_sum</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="n">row_sum</span>
 
-<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.20</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.50</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.15</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.15</span><span class="p">]])</span> <span class="c1"># matrik V yang di buat dengan nilai probalitas bernilai 1</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">last_v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
 
-<span class="c1"># batas toleransi error bahwasanya hasil V nantinya di kuadratkan dan di jumlah kemudian di akar harus memiliki nilai &lt;0.01</span>
-<span class="n">error</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># menghitung banyaknya iterasi</span>
+    <span class="nb">iter</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">v</span> <span class="o">-</span> <span class="n">last_v</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">tol</span> <span class="ow">and</span> <span class="nb">iter</span> <span class="o">&lt;</span> <span class="n">max_iter</span><span class="p">:</span>
+        <span class="n">last_v</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">d</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+        <span class="nb">iter</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="n">V</span> <span class="c1"># a merupakan tempat menyimpan hasil matrik A@V</span>
-    <span class="n">e</span><span class="o">=</span><span class="n">a</span><span class="o">-</span><span class="n">V</span> <span class="c1"># e merupakan selisih dari hasil perkalian sebelumnya</span>
-    <span class="n">f</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># f untuk menyimpan selisih yang sudah di kuadratkan dari matrik e</span>
-    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">e</span><span class="p">:</span>
-      <span class="n">f</span><span class="o">+=</span><span class="p">(</span><span class="n">d</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="o">**</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">error</span><span class="p">:</span> <span class="c1"># kondisi dimanaa f harus &lt;= 0.01</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Converged at iteration:&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-        <span class="k">break</span>
-    <span class="n">V</span> <span class="o">=</span> <span class="n">a</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ini adalah perulangan ke&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-    <span class="n">b</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">v</span>
+
+<span class="c1"># Contoh penggunaan:</span>
+<span class="c1"># Matriks adjacency</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="mi">0</span> <span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+
+<span class="c1"># Hitung PageRank</span>
+<span class="n">hasil_pagerank</span> <span class="o">=</span> <span class="n">pagerank</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PageRank:&quot;</span><span class="p">,</span> <span class="n">hasil_pagerank</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ini adalah perulangan ke 1
-[[0.225     ]
- [0.06666667]
- [0.39166667]
- [0.31666667]]
-ini adalah perulangan ke 2
-[[0.55      ]
- [0.075     ]
- [0.26666667]
- [0.10833333]]
-ini adalah perulangan ke 3
-[[0.32083333]
- [0.18333333]
- [0.275     ]
- [0.22083333]]
-Converged at iteration: 4
-Result: [[0.38541667]
- [0.10694444]
- [0.30902778]
- [0.19861111]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PageRank: [0.25 0.25 0.25 0.25]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="contoh-penerapan-untuk-mencari-pagerank-dalam-code">
+<h1>Contoh Penerapan untuk Mencari Pagerank dalam Code<a class="headerlink" href="#contoh-penerapan-untuk-mencari-pagerank-dalam-code" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span><span class="mi">0</span> <span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">]])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A x v=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="nd">@v</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A^2 x v=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="nd">@A@v</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A x (Av)=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="o">@</span><span class="p">(</span><span class="n">A</span><span class="nd">@v</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A^3 x v=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="nd">@A@A@v</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A^4 x v=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="nd">@A@A@A@v</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A^5 x v=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="nd">@A@A@A@A@v</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A^6 x v=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="nd">@A@A@A@A@A@v</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A^7 x v=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="nd">@A@A@A@A@A@A@v</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;A^8 x v=</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">A</span><span class="nd">@A@A@A@A@A@A@A@v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A x v=
+ [[0.375     ]
+ [0.08333333]
+ [0.33333333]
+ [0.20833333]]
+A^2 x v=
+ [[0.4375    ]
+ [0.125     ]
+ [0.27083333]
+ [0.16666667]]
+A x (Av)=
+ [[0.4375    ]
+ [0.125     ]
+ [0.27083333]
+ [0.16666667]]
+A^3 x v=
+ [[0.35416667]
+ [0.14583333]
+ [0.29166667]
+ [0.20833333]]
+A^4 x v=
+ [[0.39583333]
+ [0.11805556]
+ [0.29513889]
+ [0.19097222]]
+A^5 x v=
+ [[0.390625  ]
+ [0.13194444]
+ [0.28645833]
+ [0.19097222]]
+A^6 x v=
+ [[0.38194444]
+ [0.13020833]
+ [0.29166667]
+ [0.19618056]]
+A^7 x v=
+ [[0.38975694]
+ [0.12731481]
+ [0.29050926]
+ [0.19241898]]
+A^8 x v=
+ [[0.38671875]
+ [0.12991898]
+ [0.28978588]
+ [0.19357639]]
 </pre></div>
 </div>
 </div>
@@ -535,6 +610,15 @@ Result: [[0.38541667]
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Transsformasi.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Transformation linier</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -552,9 +636,16 @@ Result: [[0.38541667]
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pagerank</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep">Konsep</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algorirma">Algorirma</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi">Implementasi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#page-rank">Page Rank</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-page-rank">Algoritma Page Rank</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep">Konsep</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komputasi-untuk-menghitung-pagerank">komputasi untuk menghitung pagerank</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi">Implementasi</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-penerapan-untuk-mencari-pagerank-dalam-code">Contoh Penerapan untuk Mencari Pagerank dalam Code</a></li>
 </ul>
 
   </nav></div>
