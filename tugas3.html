@@ -186,6 +186,10 @@
 <li class="toctree-l1"><a class="reference internal" href="Determinann.html">Determinan</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Transsformasi.html">Transformation linier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aplikasi_kal.html">Pagerank</a></li>
+
+
+
 </ul>
 
     </div>
@@ -1250,9 +1254,6 @@ x_1+x_2+x_3+x_4+x_5+x_6&amp;=11\\
  [-0.   -0.   -0.   -0.   -0.    1.   -0.75  0.25 -0.    2.75 -1.    0.25]]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1505,6 +1506,28 @@ Pembuktian
  [ 0.  0.  0.  1.  0.  0.  2. -0.  0. -4.  1. -0.]
  [ 0.  0.  0.  0.  1.  0.  0.  0.  0. -1.  0.  0.]
  [ 0.  0.  0.  0.  0.  1. -1.  0.  0.  3. -1.  0.]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Definisikan matriks</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="n">det_A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">A_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A_inv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.6 -0.7]
+ [-0.2  0.4]]
 </pre></div>
 </div>
 </div>
